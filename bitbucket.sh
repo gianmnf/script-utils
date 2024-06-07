@@ -1,6 +1,8 @@
+#/bin/bash
 sudo apt update
 sudo apt install openssh-client xclip -y
 eval $(ssh-agent)
+mkdir ~/.ssh
 cd ~/.ssh
 ssh-keygen -t ed25519 -b 4096 -C "$1" -f bitbucket_work
 ssh-add ~/.ssh/bitbucket_work
